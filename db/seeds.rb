@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+
+puts "Seeding..."
+
+Todo.create(title: "Faker::WorldCup.team", done: false) 
+
+Todo.create(title: "Faker::WorldCup.team", done: true)
+
+puts "Seeding Complete"
