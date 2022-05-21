@@ -1,47 +1,24 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react'
+import LoginForm from '../components/LoginForm'
+import { useNavigate } from 'react-router-dom'
 
-function Login({ setIsLoggedIn }) {
-  const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    username: "",
-    password: "",
-  });
 
-  function handleChange(e) {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  }
+function Login({handleLogin}){
 
-  function handleSubmit(e) {
-    e.preventDefault();
+    const navigate = useNavigate();
 
-    setIsLoggedIn(true);
-
-    // after logging the user in, redirect to the home page!
-    navigate("/"); // might have to use navigate.replace 
-  }
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
-      <input
-        type="text"
-        name="username"
-        value={formData.username}
-        onChange={handleChange}
-      />
-      <input
-        type="password"
-        name="password"
-        value={formData.password}
-        onChange={handleChange}
-      />
-      <button type="submit">Login</button>
-    </form>
-  );
+    const signupButton = (
+        <>
+         <button onClick={() => navigate('/signup')}>Don't have an account? Sign up</button>
+        </>
+    )
+        return (
+            <>
+            <LoginForm handleLogin={handleLogin}/>
+            {signupButton}
+            </>
+        )
 }
+
 
 export default Login;
