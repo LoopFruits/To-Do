@@ -1,14 +1,23 @@
 import React, {useState} from 'react';
 
 
-function Signup(setIsLoggedIn){
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [passwordConfirmation, setPasswordConfirmation] = useState("");
-    const [errors, setErrors] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+function SignUpForm({handleLogin}){
+    // const [formData, setFormData] = useState({
+    //     username: "",
+    //     password: "",
+    //     password_confirmation: "",
+    //     first_name: "",
+    //     last_name: ""
+    //   });
+    // const [errors, setErrors] = useState([]);
+    // const [isLoading, setIsLoading] = useState(false);
+
+    // console.log(errors)
+    
+    // let navigate = useNavigate()
+
+
+ 
 }
 
-export default Signup;
+export default SignUpForm;

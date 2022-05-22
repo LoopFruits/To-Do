@@ -10,7 +10,6 @@ User.destroy_all
 puts "Seeding..."
 
 Todo.create(title: "Faker::WorldCup.team", done: false) 
-
 Todo.create(title: "Faker::WorldCup.team", done: true)
 
 puts "Seeding Complete"

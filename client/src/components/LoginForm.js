@@ -65,7 +65,7 @@ function LoginForm({ handleLogin }) {
         onChange={handleChange}
       />
       <button type="submit"> {isLoading ? "Loading..." : "Login"} 
-      Login
+      {/* Login */}
       </button>
       <>
       {errors.map((err) => (

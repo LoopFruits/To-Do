@@ -10,11 +10,11 @@ const linkStyles = {
   color: "white",
 };
 
-function Navbar({ setIsLoggedIn }) {
+function Navbar({ setUser }) {
   const navigate = useNavigate();
 
   function handleLogout() {
-    setIsLoggedIn(false);
+    setUser(false);
     navigate("/login");
   }
 
