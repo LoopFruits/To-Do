@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   private 
 
   def create_user_params 
-      params.permit(:first_name, :last_name, :username, :password )
+      params.permit(:first_name, :last_name, :username, :password, :password_confirmation )
   end
 
   def render_unprocessable_entity invalid
@@ -52,6 +52,7 @@ class UsersController < ApplicationController
 
   def render_not_found
     render json: {error: "User not found"}, status: 404
+  end
 
 
 

@@ -9,7 +9,7 @@ User.destroy_all
 
 puts "Seeding..."
 
-Todo.create(title: "Faker::WorldCup.team", done: false) 
-Todo.create(title: "Faker::WorldCup.team", done: true)
+Todo.create(title: "Faker::WorldCup.team", description: "Faker::World") 
+Todo.create(title: "Faker::WorldCup.team", description: "Faker::World")
 
 puts "Seeding Complete"

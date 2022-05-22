@@ -18,7 +18,7 @@ class TodosController < ApplicationController
     todo = find_todo
     todo.update(todo_params)
     render json: todo
-    end
+  
   end
 
   #DELETE 
@@ -33,7 +33,7 @@ class TodosController < ApplicationController
     
 
   def todo_params
-    params.permit(:title, :done)
+    params.permit(:title, :description)
   end
 
   def find_todo
@@ -42,6 +42,6 @@ class TodosController < ApplicationController
 
   def render_not_found_response
     render json: {error: "todo not found"}, status: :not_found
-end
+  end
 
 end
