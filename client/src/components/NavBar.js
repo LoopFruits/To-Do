@@ -1,59 +1,28 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const linkStyles = {
-  width: "100px",
-  padding: "12px",
-  margin: "0 6px 6px",
-  background: "blue",
-  textDecoration: "none",
-  color: "white",
-};
 
-function Navbar({ setUser }) {
+function Navbar({ user, setUser }) {
+
   const navigate = useNavigate();
 
   function handleLogout() {
-    setUser(false);
-    navigate("/login");
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+          setUser(null);
+          navigate("/login")
+      }
+      });
   }
+
+
 
   return (
     <div>
-      <NavLink
-        to="/"
-        /* set exact so it knows to only set activeStyle when route is deeply equal to link */
-        exact
-        /* add styling to Navlink */
-        style={linkStyles}
-        /* add prop for activeStyle */
-        activeStyle={{
-          background: "darkblue",
-        }}
-      >
-        Home
-      </NavLink>
-      <NavLink
-        to="/about"
-        exact
-        style={linkStyles}
-        activeStyle={{
-          background: "darkblue",
-        }}
-      >
-        About
-      </NavLink>
-      <NavLink
-        to="/login"
-        exact
-        style={linkStyles}
-        activeStyle={{
-          background: "darkblue",
-        }}
-      >
-        Login
-      </NavLink>
-      <button onClick={handleLogout}>Logout</button>
+        <button  to="/home" exact>Todos</button>
+        <br></br>
+        <br></br>
+        <button variant="outline" onClick={handleLogout}>Logout</button>
     </div>
   );
 }
