@@ -1,3 +1,4 @@
-class TodoSerializer < ActiveModel::Serializer
-    attributes :id :title :description
-end
+# class TodoSerializer < ActiveModel::Serializer
+#     attributes :id :title :description
+# end
+

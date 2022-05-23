@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_21_193143) do
   enable_extension "plpgsql"
 
   create_table "todos", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.string "title"
     t.string "description"
     t.datetime "created_at", null: false
